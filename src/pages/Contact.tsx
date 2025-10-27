@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Phone, MapPin, Clock, Mail } from "lucide-react";
+import { Phone, MapPin, Clock, Mail, MessageCircle, Facebook, Instagram } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { toast } from "sonner";
@@ -11,7 +11,21 @@ import { toast } from "sonner";
 const Contact = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast.success("Thank you! We'll get back to you soon.");
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get('name');
+    const phone = formData.get('phone');
+    const email = formData.get('email');
+    const service = formData.get('service');
+    const message = formData.get('message');
+    
+    // Create mailto link with form data
+    const subject = encodeURIComponent(`Service Booking Request from ${name}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nService Needed: ${service}\n\nAdditional Details:\n${message}`
+    );
+    window.location.href = `mailto:hjautorepairs@hotmail.com?subject=${subject}&body=${body}`;
+    
+    toast.success("Opening your email client...");
     (e.target as HTMLFormElement).reset();
   };
 
@@ -39,7 +53,7 @@ const Contact = () => {
                 <CardHeader>
                   <CardTitle className="text-2xl">Book Your Service</CardTitle>
                   <CardDescription>
-                    Fill out the form below and we'll get back to you as soon as possible
+                    Fill out the form below — it will open your email client to send your enquiry to hjautorepairs@hotmail.com
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -114,10 +128,64 @@ const Contact = () => {
                         </div>
                       </div>
                       <div>
-                        <h3 className="font-semibold text-lg mb-1">Phone</h3>
-                        <a href="tel:+441234567890" className="text-muted-foreground hover:text-accent transition-colors">
-                          01234 567890
+                        <h3 className="font-semibold text-lg mb-1">Phone & WhatsApp</h3>
+                        <a href="tel:+447789548910" className="text-muted-foreground hover:text-accent transition-colors block mb-1">
+                          07789 548910
                         </a>
+                        <a 
+                          href="https://wa.me/447789548910" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-muted-foreground hover:text-accent transition-colors flex items-center gap-1 text-sm"
+                        >
+                          <MessageCircle className="h-4 w-4" />
+                          WhatsApp Us
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start space-x-4">
+                      <div className="flex-shrink-0">
+                        <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-accent/10">
+                          <Mail className="h-6 w-6 text-accent" />
+                        </div>
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-lg mb-1">Email</h3>
+                        <a href="mailto:hjautorepairs@hotmail.com" className="text-muted-foreground hover:text-accent transition-colors break-all">
+                          hjautorepairs@hotmail.com
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start space-x-4">
+                      <div className="flex-shrink-0">
+                        <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-accent/10">
+                          <Facebook className="h-6 w-6 text-accent" />
+                        </div>
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-lg mb-1">Social Media</h3>
+                        <div className="flex gap-4">
+                          <a 
+                            href="https://www.facebook.com/profile.php?id=61560948601635" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-muted-foreground hover:text-accent transition-colors flex items-center gap-1"
+                          >
+                            <Facebook className="h-4 w-4" />
+                            Facebook
+                          </a>
+                          <a 
+                            href="https://www.instagram.com/hj_auto_repairs" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-muted-foreground hover:text-accent transition-colors flex items-center gap-1"
+                          >
+                            <Instagram className="h-4 w-4" />
+                            Instagram
+                          </a>
+                        </div>
                       </div>
                     </div>
 
@@ -143,16 +211,24 @@ const Contact = () => {
                 {/* Call to Action */}
                 <Card className="bg-primary text-primary-foreground">
                   <CardContent className="p-8 text-center">
-                    <h3 className="text-2xl font-bold mb-4">Prefer to Call?</h3>
+                    <h3 className="text-2xl font-bold mb-4">Quick Contact</h3>
                     <p className="mb-6 text-primary-foreground/90">
-                      Speak directly with our team to discuss your automotive needs
+                      Message us on WhatsApp or call directly
                     </p>
-                    <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground w-full">
-                      <a href="tel:+441234567890">
-                        <Phone className="mr-2 h-5 w-5" />
-                        Call Now: 01234 567890
-                      </a>
-                    </Button>
+                    <div className="space-y-3">
+                      <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground w-full">
+                        <a href="https://wa.me/447789548910" target="_blank" rel="noopener noreferrer">
+                          <MessageCircle className="mr-2 h-5 w-5" />
+                          WhatsApp: 07789 548910
+                        </a>
+                      </Button>
+                      <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10 w-full">
+                        <a href="tel:+447789548910">
+                          <Phone className="mr-2 h-5 w-5" />
+                          Call: 07789 548910
+                        </a>
+                      </Button>
+                    </div>
                   </CardContent>
                 </Card>
               </div>

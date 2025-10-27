@@ -79,6 +79,13 @@ const Services = () => {
         {/* Services Grid */}
         <section className="py-20 bg-background">
           <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Professional Car Services & Upgrades</h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                From essential maintenance to modern upgrades — we've got your vehicle covered
+              </p>
+            </div>
+            
             <div className="space-y-16">
               {serviceCategories.map((category, index) => (
                 <div key={index} className={`grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
@@ -112,6 +119,78 @@ const Services = () => {
           </div>
         </section>
 
+        {/* Pricing Guide */}
+        <section className="py-20 bg-muted">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Pricing Guide</h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                Prices based on ClickMechanic averages — perfect for getting a rough estimate. 
+                Exact quotes are confirmed after vehicle inspection.
+              </p>
+            </div>
+
+            <Card className="max-w-5xl mx-auto">
+              <CardContent className="p-6 md:p-8">
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <thead>
+                      <tr className="border-b">
+                        <th className="text-left py-4 px-4 font-semibold">Service</th>
+                        <th className="text-left py-4 px-4 font-semibold">0–1400cc</th>
+                        <th className="text-left py-4 px-4 font-semibold">1401–2000cc</th>
+                        <th className="text-left py-4 px-4 font-semibold">2001–3000cc</th>
+                        <th className="text-left py-4 px-4 font-semibold">Over 3000cc</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b">
+                        <td className="py-4 px-4 font-medium">Oil & Filter Change</td>
+                        <td className="py-4 px-4 text-muted-foreground">from £120</td>
+                        <td className="py-4 px-4 text-muted-foreground">from £145</td>
+                        <td className="py-4 px-4 text-muted-foreground">from £165</td>
+                        <td className="py-4 px-4 text-muted-foreground">from £190</td>
+                      </tr>
+                      <tr className="border-b">
+                        <td className="py-4 px-4 font-medium">Interim Service</td>
+                        <td className="py-4 px-4 text-muted-foreground">from £175</td>
+                        <td className="py-4 px-4 text-muted-foreground">from £200</td>
+                        <td className="py-4 px-4 text-muted-foreground">from £225</td>
+                        <td className="py-4 px-4 text-muted-foreground">from £245</td>
+                      </tr>
+                      <tr className="border-b">
+                        <td className="py-4 px-4 font-medium">Full Service</td>
+                        <td className="py-4 px-4 text-muted-foreground">from £235</td>
+                        <td className="py-4 px-4 text-muted-foreground">from £260</td>
+                        <td className="py-4 px-4 text-muted-foreground">from £285</td>
+                        <td className="py-4 px-4 text-muted-foreground">from £305</td>
+                      </tr>
+                      <tr className="border-b">
+                        <td className="py-4 px-4 font-medium">Brake Service</td>
+                        <td className="py-4 px-4 text-muted-foreground">from £80</td>
+                        <td className="py-4 px-4 text-muted-foreground">from £90</td>
+                        <td className="py-4 px-4 text-muted-foreground">from £100</td>
+                        <td className="py-4 px-4 text-muted-foreground">from £110</td>
+                      </tr>
+                      <tr>
+                        <td className="py-4 px-4 font-medium">Diagnostics</td>
+                        <td className="py-4 px-4 text-muted-foreground">from £45</td>
+                        <td className="py-4 px-4 text-muted-foreground">from £45</td>
+                        <td className="py-4 px-4 text-muted-foreground">from £45</td>
+                        <td className="py-4 px-4 text-muted-foreground">from £45</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p className="text-sm text-muted-foreground mt-6 text-center">
+                  We use ClickMechanic pricing data as a transparent guide to ensure fairness and consistency. 
+                  You'll always receive a confirmed quote before work begins.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
         {/* Important Note */}
         <section className="py-12 bg-muted">
           <div className="container mx-auto px-4 text-center">
@@ -126,16 +205,18 @@ const Services = () => {
           <div className="container mx-auto px-4">
             <Card className="bg-primary text-primary-foreground">
               <CardContent className="p-12 text-center">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Need a Service?</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Book Your Service?</h2>
                 <p className="text-xl mb-8 text-primary-foreground/90">
-                  Get in touch today to book your car service or ask about our services
+                  Get in touch today via WhatsApp or call us for a quick quote
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                    <Link to="/contact">Book Your Car In Today</Link>
+                    <a href="https://wa.me/447789548910" target="_blank" rel="noopener noreferrer">
+                      Book Now via WhatsApp
+                    </a>
                   </Button>
                   <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                    <a href="tel:+441234567890">Call for a Quote</a>
+                    <a href="tel:+447789548910">Call: 07789 548910</a>
                   </Button>
                 </div>
               </CardContent>

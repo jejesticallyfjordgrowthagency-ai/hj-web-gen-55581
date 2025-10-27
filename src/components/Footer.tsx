@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, MapPin, Clock } from "lucide-react";
+import { Phone, MapPin, Clock, Mail, Facebook, Instagram } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const Footer = () => {
@@ -45,8 +45,22 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-2">
                 <Phone className="h-4 w-4 flex-shrink-0" />
-                <a href="tel:+441234567890" className="hover:text-accent transition-colors">
-                  01234 567890
+                <a href="tel:+447789548910" className="hover:text-accent transition-colors">
+                  07789 548910
+                </a>
+              </li>
+              <li className="flex items-center space-x-2">
+                <Mail className="h-4 w-4 flex-shrink-0" />
+                <a href="mailto:hjautorepairs@hotmail.com" className="hover:text-accent transition-colors">
+                  hjautorepairs@hotmail.com
+                </a>
+              </li>
+              <li className="flex items-center space-x-2 gap-3 mt-4">
+                <a href="https://www.facebook.com/profile.php?id=61560948601635" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
+                  <Facebook className="h-5 w-5" />
+                </a>
+                <a href="https://www.instagram.com/hj_auto_repairs" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
+                  <Instagram className="h-5 w-5" />
                 </a>
               </li>
             </ul>
