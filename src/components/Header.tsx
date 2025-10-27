@@ -41,12 +41,12 @@ const Header = () => {
           </nav>
 
           <div className="hidden md:flex items-center space-x-4">
-            <a href="tel:+441234567890" className="flex items-center space-x-2 text-sm font-medium text-foreground hover:text-accent transition-colors">
+            <a href="tel:+447789548910" className="flex items-center space-x-2 text-sm font-medium text-foreground hover:text-accent transition-colors">
               <Phone className="h-4 w-4" />
-              <span>01234 567890</span>
+              <span>07789 548910</span>
             </a>
             <Button asChild variant="default" className="bg-accent hover:bg-accent/90">
-              <a href="https://wa.me/441234567890" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+              <a href="https://wa.me/447789548910" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                 <MessageCircle className="h-4 w-4" />
                 Book Now
               </a>
@@ -78,12 +78,12 @@ const Header = () => {
                 {item.name}
               </Link>
             ))}
-            <a href="tel:+441234567890" className="flex items-center space-x-2 text-sm font-medium text-foreground hover:text-accent transition-colors">
+            <a href="tel:+447789548910" className="flex items-center space-x-2 text-sm font-medium text-foreground hover:text-accent transition-colors">
               <Phone className="h-4 w-4" />
-              <span>01234 567890</span>
+              <span>07789 548910</span>
             </a>
             <Button asChild variant="default" className="w-full bg-accent hover:bg-accent/90">
-              <a href="https://wa.me/441234567890" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+              <a href="https://wa.me/447789548910" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
                 <MessageCircle className="h-4 w-4" />
                 Book Now
               </a>

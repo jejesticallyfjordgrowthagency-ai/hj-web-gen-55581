@@ -168,7 +168,7 @@ const Contact = () => {
                         <h3 className="font-semibold text-lg mb-1">Social Media</h3>
                         <div className="flex gap-4">
                           <a 
-                            href="https://www.facebook.com/profile.php?id=61560948601635" 
+                            href="https://www.facebook.com/profile.php?id=61560948601635&mibextid=ZbWKwL" 
                             target="_blank" 
                             rel="noopener noreferrer"
                             className="text-muted-foreground hover:text-accent transition-colors flex items-center gap-1"
@@ -177,7 +177,7 @@ const Contact = () => {
                             Facebook
                           </a>
                           <a 
-                            href="https://www.instagram.com/hj_auto_repairs" 
+                            href="https://www.instagram.com/hj_auto_repairs?igsh=dDU3OWZ2dHhzcGpt" 
                             target="_blank" 
                             rel="noopener noreferrer"
                             className="text-muted-foreground hover:text-accent transition-colors flex items-center gap-1"

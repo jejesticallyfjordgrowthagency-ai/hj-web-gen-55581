@@ -56,10 +56,10 @@ const Footer = () => {
                 </a>
               </li>
               <li className="flex items-center space-x-2 gap-3 mt-4">
-                <a href="https://www.facebook.com/profile.php?id=61560948601635" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
+                <a href="https://www.facebook.com/profile.php?id=61560948601635&mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
                   <Facebook className="h-5 w-5" />
                 </a>
-                <a href="https://www.instagram.com/hj_auto_repairs" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
+                <a href="https://www.instagram.com/hj_auto_repairs?igsh=dDU3OWZ2dHhzcGpt" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
                   <Instagram className="h-5 w-5" />
                 </a>
               </li>
