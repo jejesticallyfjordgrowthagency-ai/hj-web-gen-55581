@@ -113,13 +113,13 @@ const Home = () => {
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
                       <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8">
-                        <a href="https://wa.me/441234567890" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                        <a href="https://wa.me/447789548910" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                           <MessageCircle className="h-5 w-5" />
                           Book Now
                         </a>
                       </Button>
                       <Button asChild size="lg" variant="outline" className="bg-white/10 border-white text-white hover:bg-white/20 text-lg px-8">
-                        <a href="tel:+441234567890">Call Now</a>
+                        <a href="tel:+447789548910">Call Now</a>
                       </Button>
                     </div>
                   </div>
@@ -145,7 +145,7 @@ const Home = () => {
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
                       <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8">
-                        <a href="https://wa.me/441234567890" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                        <a href="https://wa.me/447789548910" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                           <MessageCircle className="h-5 w-5" />
                           Book Now
                         </a>
@@ -177,7 +177,7 @@ const Home = () => {
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
                       <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8">
-                        <a href="https://wa.me/441234567890" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                        <a href="https://wa.me/447789548910" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                           <MessageCircle className="h-5 w-5" />
                           Book Now
                         </a>
@@ -209,7 +209,7 @@ const Home = () => {
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
                       <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8">
-                        <a href="https://wa.me/441234567890" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                        <a href="https://wa.me/447789548910" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                           <MessageCircle className="h-5 w-5" />
                           Book Now
                         </a>
@@ -340,10 +340,10 @@ const Home = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                <a href="https://wa.me/441234567890" target="_blank" rel="noopener noreferrer">Book Your Car In Today</a>
+                <a href="https://wa.me/447789548910" target="_blank" rel="noopener noreferrer">Book Your Car In Today</a>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                <a href="tel:+441234567890">Call Us Now</a>
+                <a href="tel:+447789548910">Call Us Now</a>
               </Button>
             </div>
           </div>
