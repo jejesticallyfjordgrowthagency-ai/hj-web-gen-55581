@@ -37,7 +37,7 @@ const Home = () => {
     {
       icon: Star,
       title: "5-Star Customer Satisfaction",
-      description: "22 verified Google reviews praising our quality service",
+      description: "24 verified Google reviews praising our quality service",
     },
     {
       icon: Shield,
@@ -141,7 +141,7 @@ const Home = () => {
                       Customer Satisfaction Guaranteed
                     </h1>
                     <p className="text-xl md:text-2xl mb-8 text-primary-foreground/90 animate-fade-in">
-                      22 Five-Star Reviews • Honest Pricing • Professional Service
+                      24 Five-Star Reviews • Honest Pricing • Professional Service
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
                       <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8">
@@ -233,7 +233,7 @@ const Home = () => {
             <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
               <div className="flex items-center space-x-2">
                 <Star className="h-5 w-5 text-yellow-500" />
-                <span className="font-semibold">5.0⭐ Rating (22 Reviews)</span>
+                <span className="font-semibold">5.0⭐ Rating (24 Reviews)</span>
               </div>
               <div className="flex items-center space-x-2">
                 <span className="font-semibold">📍 Unit 7a, Fenlake Rd, Bedford MK42 0HB</span>

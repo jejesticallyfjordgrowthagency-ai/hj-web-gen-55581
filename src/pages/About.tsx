@@ -10,7 +10,7 @@ const About = () => {
   const values = [
     {
       icon: Star,
-      title: "22 Five-Star Google Reviews",
+      title: "24 Five-Star Google Reviews",
       description: "Our reputation is built on consistent quality and customer satisfaction",
     },
     {
@@ -138,7 +138,7 @@ const About = () => {
                 ))}
               </div>
               <h2 className="text-4xl md:text-5xl font-bold mb-4">5.0 Star Rating</h2>
-              <p className="text-2xl mb-8 text-primary-foreground/90">Based on 22 verified Google reviews</p>
+              <p className="text-2xl mb-8 text-primary-foreground/90">Based on 24 verified Google reviews</p>
               <p className="text-xl max-w-2xl mx-auto mb-8 text-primary-foreground/80">
                 Our customers' satisfaction is our greatest achievement. Every positive review motivates 
                 us to maintain the highest standards of service.
