@@ -7,6 +7,7 @@ import { Phone, MapPin, Clock, Mail, MessageCircle, Facebook, Instagram } from "
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { toast } from "sonner";
+import heroImage from "@/assets/hero-workshop.jpg";
 
 const Contact = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -35,8 +36,14 @@ const Contact = () => {
       
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="bg-primary text-primary-foreground py-20">
-          <div className="container mx-auto px-4 text-center">
+        <section className="relative py-20 overflow-hidden">
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${heroImage})` }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/95 to-primary/70"></div>
+          </div>
+          <div className="relative z-10 container mx-auto px-4 text-center text-primary-foreground">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
             <p className="text-xl max-w-3xl mx-auto text-primary-foreground/90">
               Get in touch to book your car service or ask any questions. We're here to help!
