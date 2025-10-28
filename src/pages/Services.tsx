@@ -125,8 +125,9 @@ const Services = () => {
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Pricing Guide</h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Prices based on ClickMechanic averages — perfect for getting a rough estimate. 
-                Exact quotes are confirmed after vehicle inspection.
+                The practice of using a standardized flat-rate system is also known as "book time." 
+                This is a common practice in the auto repair industry where a manufacturer or industry 
+                guide determines the amount of time a particular repair should take.
               </p>
             </div>
 
@@ -191,12 +192,54 @@ const Services = () => {
           </div>
         </section>
 
-        {/* Important Note */}
+        {/* Important Notes */}
         <section className="py-12 bg-muted">
-          <div className="container mx-auto px-4 text-center">
-            <p className="text-lg font-semibold text-muted-foreground">
-              Please Note: We do not provide tyre services at this time
-            </p>
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto space-y-4 text-center">
+              <p className="text-lg font-semibold text-muted-foreground">
+                Please Note: We do not provide tyre services at this time
+              </p>
+              <p className="text-lg font-semibold text-foreground">
+                ✓ Pick Up & Collection Service Available — We can collect your vehicle for service and return it to you
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Reviews Section */}
+        <section className="py-20 bg-background">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Love Our Service?</h2>
+              <p className="text-xl text-muted-foreground mb-8">
+                Your feedback helps us grow and helps others find quality car service in Bedford. 
+                We'd be grateful if you could share your experience!
+              </p>
+              <Card className="bg-accent/10 border-accent">
+                <CardContent className="p-8">
+                  <div className="flex flex-col items-center space-y-6">
+                    <div className="flex space-x-1">
+                      {[...Array(5)].map((_, i) => (
+                        <span key={i} className="text-yellow-500 text-4xl">⭐</span>
+                      ))}
+                    </div>
+                    <p className="text-lg font-semibold">Join our 24 satisfied customers with 5-star reviews!</p>
+                    <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                      <a 
+                        href="https://g.page/r/CYx6LHb-UDw5EBM/review" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                      >
+                        Leave a Google Review
+                      </a>
+                    </Button>
+                    <p className="text-sm text-muted-foreground">
+                      Takes less than a minute • Helps us serve you better
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </section>
 
