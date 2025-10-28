@@ -72,10 +72,6 @@ const About = () => {
                     oil change, complex engine diagnostics, or want to upgrade your car's audio system, we treat 
                     every job with the same level of professionalism and attention to detail.
                   </p>
-                  <p>
-                    We use <strong>ClickMechanic</strong> to provide accurate pricing estimates for our customers — 
-                    it's one of the best resources for realistic service costs, and our pricing closely matches their guides.
-                  </p>
                 </div>
               </div>
               
