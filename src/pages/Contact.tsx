@@ -3,31 +3,61 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Phone, MapPin, Clock, Mail, MessageCircle, Facebook, Instagram } from "lucide-react";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Calendar } from "@/components/ui/calendar";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Phone, MapPin, Clock, Mail, MessageCircle, Facebook, Instagram, CalendarIcon } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { toast } from "sonner";
 import heroImage from "@/assets/hero-workshop.jpg";
+import { format } from "date-fns";
+import { cn } from "@/lib/utils";
+import { useState } from "react";
 
 const Contact = () => {
+  const [date, setDate] = useState<Date>();
+  const [selectedService, setSelectedService] = useState<string>("");
+  const [customService, setCustomService] = useState<string>("");
+
+  const services = [
+    "Engine Diagnostics",
+    "Oil Change & Service",
+    "Brake Repair/Replacement",
+    "Suspension Work",
+    "Exhaust Repair",
+    "MOT Preparation",
+    "Car Audio Installation",
+    "Speaker Upgrades",
+    "Subwoofer Installation",
+    "Detailing & Cleaning",
+    "Other"
+  ];
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const name = formData.get('name');
     const phone = formData.get('phone');
     const email = formData.get('email');
-    const service = formData.get('service');
+    const time = formData.get('time');
     const message = formData.get('message');
+    
+    const finalService = selectedService === "Other" ? customService : selectedService;
+    const appointmentDate = date ? format(date, "PPP") : "Not specified";
     
     // Create mailto link with form data
     const subject = encodeURIComponent(`Service Booking Request from ${name}`);
     const body = encodeURIComponent(
-      `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nService Needed: ${service}\n\nAdditional Details:\n${message}`
+      `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\n\nPreferred Date: ${appointmentDate}\nPreferred Time: ${time || "Not specified"}\nService Needed: ${finalService}\n\nAdditional Details:\n${message}`
     );
     window.location.href = `mailto:hjautorepairs@hotmail.com?subject=${subject}&body=${body}`;
     
     toast.success("Opening your email client...");
     (e.target as HTMLFormElement).reset();
+    setDate(undefined);
+    setSelectedService("");
+    setCustomService("");
   };
 
   return (
@@ -81,9 +111,65 @@ const Contact = () => {
                     </div>
                     
                     <div className="space-y-2">
-                      <Label htmlFor="service">Service Needed *</Label>
-                      <Input id="service" name="service" placeholder="e.g., Brake repair, Speaker upgrade" required />
+                      <Label htmlFor="date">Preferred Date</Label>
+                      <Popover>
+                        <PopoverTrigger asChild>
+                          <Button
+                            variant="outline"
+                            className={cn(
+                              "w-full justify-start text-left font-normal",
+                              !date && "text-muted-foreground"
+                            )}
+                          >
+                            <CalendarIcon className="mr-2 h-4 w-4" />
+                            {date ? format(date, "PPP") : <span>Pick a date</span>}
+                          </Button>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-auto p-0" align="start">
+                          <Calendar
+                            mode="single"
+                            selected={date}
+                            onSelect={setDate}
+                            initialFocus
+                            className="pointer-events-auto"
+                          />
+                        </PopoverContent>
+                      </Popover>
                     </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="time">Preferred Time</Label>
+                      <Input id="time" name="time" type="time" />
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <Label htmlFor="service">Service Needed *</Label>
+                      <Select value={selectedService} onValueChange={setSelectedService} required>
+                        <SelectTrigger>
+                          <SelectValue placeholder="Select a service" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {services.map((service) => (
+                            <SelectItem key={service} value={service}>
+                              {service}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    </div>
+
+                    {selectedService === "Other" && (
+                      <div className="space-y-2">
+                        <Label htmlFor="customService">Please specify the service *</Label>
+                        <Input 
+                          id="customService" 
+                          value={customService}
+                          onChange={(e) => setCustomService(e.target.value)}
+                          placeholder="Type your service here" 
+                          required 
+                        />
+                      </div>
+                    )}
                     
                     <div className="space-y-2">
                       <Label htmlFor="message">Additional Details</Label>
